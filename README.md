@@ -38,7 +38,7 @@ Valence-Arousal은 EEG, ECG, GSR 등의 생체신호를 바탕으로 하는 연�
 NRC-VAD는 약 20k개의 단어에 Valence-Arousal-Dominance 점수가 0-1 사이로 측정된 lexicon으로 여기에서 Valence, Arousal 점수만 사용하였다. emobank는 약 10k개의 문장에 Valence-Arousal-Dominance 점수가 1-5 사이로 측정된 corpus로 여기에서 Valence, Arousal 점수만 사용하였다. stopword와 padding을 0으로 채우기 위해 모든 데이터의 label은 -1~1로 scaling하였다.
 
 ### 3.2 Embedding
-embeding은 두 가지의 방법으로 시도하였다.
+embedding은 두 가지의 방법으로 시도하였다.
 1. lexicon의 Valence-Arousal 점수를 그대로 embedding으로 사용  
 : 표로 그리기
 2. torchtext에 사전 학습되어있는 GloVe embedding을 사용
