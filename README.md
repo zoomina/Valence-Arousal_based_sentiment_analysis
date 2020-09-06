@@ -47,11 +47,13 @@ embedding은 두 가지의 방법으로 시도하였다.
 
 ## 4. 모델 구축 및 학습
 ### 4.1 lexicon based trial
-해당 문제는 regression으로 시도되었으며, 이는 상대적인 지표이기 때문에 기준으로 아래의 값에 대한 mse를 참고하였으며, 형용사를 제외한 모든 품사에 대해 weight를 0.1로 조정했을 때의 mse가 평균 0.0295745652973668으로 가장 낮게 나타나 이후 학습에서도 같은 weight를 적용하였다.  
+해당 문제는 regression으로 시도되었으며, 이는 상대적인 지표이기 때문에 기준으로 아래의 값에 대한 mse를 참고하였다.
 
 ![image](https://user-images.githubusercontent.com/39390943/92320980-e522a100-f060-11ea-8635-edcfa1aebdc4.png)  
 
-mse: 0.26928572972569476
+형용사를 제외한 모든 품사에 대해 weight를 0.1로 조정했을 때의 mse가 평균 0.0295745652973668으로 가장 낮게 나타나 이후 학습에서도 같은 weight를 적용하였다.  
+
+
 
 #### 4.1.1 CNN
 ![image](https://user-images.githubusercontent.com/39390943/92321057-b48f3700-f061-11ea-8813-2f1ad5558245.png)
