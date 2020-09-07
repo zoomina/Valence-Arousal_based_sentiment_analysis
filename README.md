@@ -51,23 +51,32 @@ embedding은 두 가지의 방법으로 시도하였다.
 
 ![image](https://user-images.githubusercontent.com/39390943/92320980-e522a100-f060-11ea-8635-edcfa1aebdc4.png)  
 
-또한 형용사를 제외한 모든 품사에 대해 weight를 0.1로 조정했을 때의 mse가 평균 0.0295745652973668으로 가장 낮게 나타나 이후 학습에서도 같은 weight를 적용하였다.  
+위의 식을 바탕으로 mse를 측정할 경우 형용사를 제외한 모든 품사의 weight를 0.1로 조정했을 때의 mse가 0.0295745652973668으로 가장 낮게 나타났으나, 학습에 사용한 모델의 경우 일관적이지 않았으므로 가장 좋은 결과가 나온 값을 함께 표기하였다.  
 
+#### 4.1.1 CNN  
+![image](https://user-images.githubusercontent.com/39390943/92418427-62096400-f1a2-11ea-89bb-8f7cbd72cdb6.png)
 
-#### 4.1.1 CNN
-![image](https://user-images.githubusercontent.com/39390943/92321057-b48f3700-f061-11ea-8813-2f1ad5558245.png)
+> batch_size = 64 / epoch = 50 / step_size = 10, gamma = 0.1 / weight = 모두 1  
+> **Test complete : avg. loss : 0.022643061181794072**  
 
-> **Test complete : avg. loss : 0.022307074116252004**
+#### 4.1.2 LSTM  
+![image](https://user-images.githubusercontent.com/39390943/92418443-76e5f780-f1a2-11ea-81bd-cf32979fe541.png)
 
-#### 4.1.2 Bi-LSTM
-![image](https://user-images.githubusercontent.com/39390943/92321041-9a555900-f061-11ea-8b50-349c0ed57a5a.png)
+> batch_size = 64 / epoch = 50 / step_size = 10, gamma = 0.1 / weight = 형용사 제외 모두 0.1  
+> **Test complete : avg. loss : 0.02504425667047321**  
 
-> **Test complete : avg. loss : 0.08659133683582518**
+#### 4.1.3 Bi-LSTM  
+![image](https://user-images.githubusercontent.com/39390943/92418462-8ebd7b80-f1a2-11ea-9347-61c40b5f0f84.png)
 
-#### 4.1.3 C-LSTM
-![image](https://user-images.githubusercontent.com/39390943/92321067-d8527d00-f061-11ea-8c5e-4411c6f531f8.png)
+> batch_size = 32 / epoch = 100 / step_size = 20, gamma = 0.1 / weight = 모두 1  
+> **Test complete : avg. loss : 0.025263045734386674**  
 
-> **Test complete : avg. loss : 0.025447068566789324**
+#### 4.1.4 C-LSTM  
+![image](https://user-images.githubusercontent.com/39390943/92418473-9b41d400-f1a2-11ea-97e3-cb9cec1748d0.png)
+
+> batch_size = 64 / epoch = 100 / step_size = 20, gamma = 0.1 / weight = 모두 1  
+> **Test complete : avg. loss : 0.025152432998511394**  
+
 
 
 ### 4.2 GloVe embedding
